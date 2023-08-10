@@ -3,10 +3,10 @@ import socket
 import requests
 import os
 
-IPINFO_API_KEY = "84bfca15b8c268"  # Replace this with your actual API key
+IPINFO_API_KEY = "84bfca15b8c268"  
 
 def get_wifi_interface():
-    # Iterate through all network interfaces and find the Wi-Fi interface
+  
     for interface, stats in psutil.net_if_stats().items():
         if stats.isup and 'Wi-Fi' in interface:
             return interface
