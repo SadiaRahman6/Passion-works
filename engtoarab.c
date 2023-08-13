@@ -1,41 +1,39 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
-void convertToArabicPronunciation(const char *english, char *arabic, int maxLength) {
-    const char *englishLetters = "abcdefghijklmnopqrstuvwxyz";
-    const char *arabicLetters[] = {
-        "ا", "ب", "ك", "د", "اي", "اف", "جي", "ايتش", "اي", "جي", "كاي", "ايم", "اين",
-        "او", "بي", "كيو", "ار", "اس", "تي", "يو", "في", "دبليو", "اكس", "واي", "زي"
-    };
-
-    int length = strlen(english);
-    if (length >= maxLength) {
-        printf("Input too long to convert.\n");
-        return;
-    }
-
-    for (int i = 0; i < length; i++) {
-        char ch = english[i];
-        if (ch >= 'a' && ch <= 'z') {
-            int index = ch - 'a';
-            strcat(arabic, arabicLetters[index]);
+void convertToArabic(char *english, char *arabic) {
+    // Basic mapping for demonstration purposes
+    const char *englishChars = "abcdefghijklmnopqrstuvwxyz";
+    const char *arabicChars = "أبثدإفغحيجكلمنوبفبغرستثفخجلمنهوببيز";
+    
+    for (int i = 0; i < strlen(english); i++) {
+        if (isalpha(english[i])) {
+            char *pos = strchr(englishChars, tolower(english[i]));
+            if (pos) {
+                int index = pos - englishChars;
+                arabic[i] = arabicChars[index];
+            } else {
+                arabic[i] = english[i];  // Keep non-mapped characters as-is
+            }
         } else {
-            strncat(arabic, &ch, 1);
+            arabic[i] = english[i];  // Keep non-alphabetic characters as-is
         }
     }
+    arabic[strlen(english)] = '\0';
 }
 
 int main() {
     char english[100];
-    char arabic[300] = ""; // Assuming the result won't exceed 300 characters
-
+    char arabic[100];
+    
     printf("Type in English: ");
     fgets(english, sizeof(english), stdin);
-    english[strcspn(english, "\n")] = '\0'; // Remove the newline character
-
-    convertToArabicPronunciation(english, arabic, sizeof(arabic));
-
-    printf("Arabic Pronunciation: %s\n", arabic);
-
+    english[strlen(english) - 1] = '\0';  // Remove newline character
+    
+    convertToArabic(english, arabic);
+    
+    printf("Equivalent Arabic: %s\n", arabic);
+    
     return 0;
 }
