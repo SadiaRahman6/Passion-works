@@ -16,7 +16,7 @@
 int main()
 {
     printf("%s\t\t\t\t\t\t\tName Card\t%s",BG_YELLOW,AC_NORMAL);
-    printf("%s\n\nName:%s\t\t\tMy name is Md. Tanvir Ahsan.\t",AC_RED,AC_NORMAL);
+    printf("%s\n\nName:%s\t\t\tMy name is Zombie12k.\t",AC_RED,AC_NORMAL);
     printf("%s\n\nID number:%s\t\t2322663",AC_MAGENTA,AC_NORMAL);
     printf("%s\n\nHobby:%s\t\t\tReading books and typing.\t",AC_GREEN,AC_NORMAL);
     printf("%s\n\nWhy I choose CSE:%s\tI choose Computer Science Engineering because from very young age I have a passion of how an application works and how to make an application. I have also made a discord bot which mimicks the works of the discontinued discord bot Rythm. I have also worked as a back end developer in some custom rom community but had to step down from it as HSC exam was coming closer. I also made calculator and tic tak toe game in python. And I can also continue my passion in typing if I choose Computer Science Engineering. So as I had some experience and have the passion in this programming world I choose Computer Science Engineering.\t",AC_YELLOW,AC_NORMAL);
