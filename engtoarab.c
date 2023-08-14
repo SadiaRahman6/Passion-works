@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-// Function to convert English text to "Arabic" phonetically similar text
+
 void convertToArabic(char *input) {
     int length = strlen(input);
     
@@ -99,7 +99,7 @@ int main() {
     printf("Enter English text: ");
     fgets(input, sizeof(input), stdin);
     
-    // Remove newline character from fgets
+ 
     input[strcspn(input, "\n")] = '\0';
     
     printf("Phonetically similar 'Arabic' text: ");
