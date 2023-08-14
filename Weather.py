@@ -4,7 +4,7 @@ import threading
 import time
 from datetime import datetime
 
-# Replace 'YOUR_API_KEY' with your actual API key from weatherapi.com
+
 API_KEY = 'd47ed1bd8562441d8c764521232907'
 BASE_URL = 'http://api.weatherapi.com/v1/current.json'
 
