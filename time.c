@@ -49,7 +49,7 @@ int main() {
     int local_sec = (int)(local_time.sec.x % 60);
 
     time_t start_time = time(NULL);
-    time_t end_time = start_time + 6 * 3600;  // Run for 6 hours
+    time_t end_time = start_time + 6 * 3600;
 
     while (time(NULL) < end_time) {
         display12HourFormat(local_hour, local_min, local_sec);
