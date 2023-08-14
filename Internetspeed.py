@@ -64,4 +64,4 @@ def show_wifi_info(duration_hours=1, interval=0.01):
 
 if __name__ == "__main__":
     import time
-    show_wifi_info(duration_hours=2)  # Change the duration_hours value as per your requirement
+    show_wifi_info(duration_hours=2) 
